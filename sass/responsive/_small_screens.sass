@@ -1,16 +1,17 @@
 $spacing: $spacing/2
 @media all and (max-device-width: 767px), all and (max-width: 449px)
   body
-    font-size: 1em
     margin: 0
     min-width: 0
+  #wrapper
+    background: none
+    max-width: auto
+    margin: 0 auto
+    padding: 0
   #loggedas, #sidebar, #footer
     display: none
   #top-menu
-    #account
-      bottom: -2em
-      position: absolute
-    ul
+    > ul
       +border-radius(0)
       +box-shadow(none)
       width: 100%
@@ -27,14 +28,21 @@ $spacing: $spacing/2
         &:last-child a
           border-right: 0
           +border-radius(0)
+    #account
+      bottom: -2em
+      position: absolute
+      li
+        width: auto
+        a
+          overflow: visible
   #header
     margin: $spacing*4 0 $spacing*2 0
-    h1
-      margin: $spacing
     .project_selector
       margin-top: $spacing
     #main-menu
       margin: 0
+      a
+        padding: 4px $spacing/2 !important
     #quick-search
       color: transparent
       margin-right: $spacing
